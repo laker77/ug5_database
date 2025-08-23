@@ -1,4 +1,3 @@
-const formidable = require('formidable');
 const fetch = require('node-fetch');
 const FormData = require('form-data');
 const fs = require('fs');
@@ -17,7 +16,7 @@ module.exports = async (req, res) => {
     // Обгортаємо formidable в проміс
     const parseForm = (req) =>
         new Promise((resolve, reject) => {
-            const form = formidable({});
+           const form = new formidable.IncomingForm();
             form.parse(req, (err, fields, files) => {
                 if (err) reject(err);
                 else resolve([fields, files]);
