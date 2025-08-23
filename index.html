@@ -878,12 +878,12 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
-        // 1. Готуємо дані для відправки на ВАШ сервер (проксі)
+
         const file = photoUpload.files[0];
         const proxyFormData = new FormData();
         proxyFormData.append('image', file);
         
-        // 2. Відправляємо зображення на наш проксі-сервер
+
         const proxyResponse = await fetch('/api/upload', { // <-- Адреса нашої серверної функції
             method: 'POST',
             body: proxyFormData
@@ -902,10 +902,9 @@ if (!proxyResult.success) {
 }
         
         
-        // 3. Отримуємо URL зображення, який повернув наш сервер
         const imageUrl = proxyResult.data.url;
         
-        // 4. Тепер відправляємо дані до Google Apps Script
+
         const googleFormData = new URLSearchParams();
         googleFormData.append('staticId', staticId);
         googleFormData.append('detainedName', detainedName);
@@ -926,7 +925,7 @@ if (!proxyResult.success) {
 
         console.log('Form Data to Google:', Object.fromEntries(googleFormData));
 
-        // Відправка даних до Google
+
         const response = await fetch(appsScriptUrl, {
             method: 'POST',
             body: googleFormData,
