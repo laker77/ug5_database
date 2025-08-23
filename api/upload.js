@@ -9,15 +9,10 @@ module.exports = async (req, res) => {
     }
 
     const IMGBB_API_KEY = '23dc9b791442ba3b79d7d364a9c770d2';
-    if (!IMGBB_API_KEY) {
-        console.error('IMGBB_API_KEY is not set in environment variables');
-        return res.status(500).json({ success: false, error: 'Server configuration error: API key is missing.' });
-    }
 
-    // Обгортаємо formidable в проміс
     const parseForm = (req) =>
         new Promise((resolve, reject) => {
-           const form = new formidable.IncomingForm();
+            const form = new formidable.IncomingForm();
             form.parse(req, (err, fields, files) => {
                 if (err) reject(err);
                 else resolve([fields, files]);
@@ -36,12 +31,22 @@ module.exports = async (req, res) => {
         const fileStream = fs.createReadStream(imageFile.filepath);
         imgbbFormData.append('image', fileStream);
 
+        // --- ПОЧАТОК ВИПРАВЛЕНОГО БЛОКУ ---
+
+        // 1. Спочатку виконуємо запит до ImgBB
         const imgbbResponse = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
             method: 'POST',
             body: imgbbFormData,
         });
 
-        const imgbbResult = await imgbbResponse.json();
+        // 2. Потім читаємо відповідь як ТЕКСТ, щоб побачити HTML-помилку
+        const responseText = await imgbbResponse.text();
+        console.log('IMGbb Response:', responseText); // Виводимо текст помилки в лог на Vercel
+
+        // 3. Тепер намагаємося перетворити цей текст на JSON
+        const imgbbResult = JSON.parse(responseText);
+
+        // --- КІНЕЦЬ ВИПРАВЛЕНОГО БЛОКУ ---
 
         if (!imgbbResult.success) {
             console.error('ImgBB API Error:', imgbbResult);
