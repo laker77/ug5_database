@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 const FormData = require('form-data');
-const formidable = require('formidable');
+const formidable = require('formidable'); // Переконайтесь, що цей рядок є
 const fs = require('fs');
 
 module.exports = async (req, res) => {
@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
 
     const parseForm = (req) =>
         new Promise((resolve, reject) => {
-            const form = new formidable.IncomingForm();
+            const form = new formidable.IncomingForm(); // Правильна ініціалізація
             form.parse(req, (err, fields, files) => {
                 if (err) reject(err);
                 else resolve([fields, files]);
@@ -31,22 +31,16 @@ module.exports = async (req, res) => {
         const fileStream = fs.createReadStream(imageFile.filepath);
         imgbbFormData.append('image', fileStream);
 
-        // --- ПОЧАТОК ВИПРАВЛЕНОГО БЛОКУ ---
-
-        // 1. Спочатку виконуємо запит до ImgBB
         const imgbbResponse = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
             method: 'POST',
             body: imgbbFormData,
         });
 
-        // 2. Потім читаємо відповідь як ТЕКСТ, щоб побачити HTML-помилку
+        // Цей блок потрібен для діагностики, якщо ImgBB повертає помилку
         const responseText = await imgbbResponse.text();
-        console.log('IMGbb Response:', responseText); // Виводимо текст помилки в лог на Vercel
-
-        // 3. Тепер намагаємося перетворити цей текст на JSON
+        console.log('IMGbb Response:', responseText);
         const imgbbResult = JSON.parse(responseText);
 
-        // --- КІНЕЦЬ ВИПРАВЛЕНОГО БЛОКУ ---
 
         if (!imgbbResult.success) {
             console.error('ImgBB API Error:', imgbbResult);
