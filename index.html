@@ -19,8 +19,8 @@
         }
         
         body {
-            background: #0a0a1a;
-            color: #e0e0ff;
+            background: #0a0a0f;
+            color: #d0d0e0;
             font-family: 'Roboto Mono', monospace;
             min-height: 100vh;
             position: relative;
@@ -36,31 +36,13 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.15;
+            opacity: 0.07;
             overflow: hidden;
         }
         
         #matrix-canvas {
             width: 100%;
             height: 100%;
-        }
-        
-        .scan-line {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to bottom, rgba(0, 255, 200, 0.7), transparent);
-            box-shadow: 0 0 10px rgba(0, 255, 200, 0.7);
-            animation: scan 4s linear infinite;
-            z-index: 999;
-        }
-        
-        @keyframes scan {
-            0% { top: 0%; }
-            50% { top: 100%; }
-            100% { top: 0%; }
         }
         
         .container {
@@ -77,12 +59,12 @@
             margin-bottom: 30px;
             position: relative;
             overflow: hidden;
-            background: rgba(10, 15, 35, 0.7);
+            background: rgba(10, 10, 15, 0.85);
             border-radius: 12px;
-            border: 1px solid rgba(0, 150, 255, 0.3);
-            box-shadow: 0 0 25px rgba(0, 100, 200, 0.4);
+            border: 1px solid rgba(80, 80, 120, 0.3);
+            box-shadow: 0 0 25px rgba(40, 40, 80, 0.4);
             backdrop-filter: blur(5px);
-            border-top: 1px solid rgba(0, 200, 255, 0.5);
+            border-top: 1px solid rgba(100, 100, 150, 0.4);
         }
         
         .header h1 {
@@ -91,10 +73,10 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             color: #fff;
-            text-shadow: 0 0 10px rgba(0, 180, 255, 0.7);
+            text-shadow: 0 0 10px rgba(180, 180, 255, 0.4);
             margin-bottom: 15px;
             position: relative;
-            background: linear-gradient(90deg, #00aaff, #00e5ff);
+            background: linear-gradient(90deg, #a0a0ff, #c0c0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -107,14 +89,14 @@
             left: 50%;
             transform: translateX(-50%);
             width: 300px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #00aaff, transparent);
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a0a0ff, transparent);
             border-radius: 50%;
         }
         
         .header p {
             font-size: 1.1rem;
-            color: #a0c0ff;
+            color: #a0a0c0;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
@@ -125,10 +107,10 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(255, 50, 50, 0.2);
-            color: #ff5555;
+            background: rgba(120, 50, 50, 0.25);
+            color: #cc8888;
             padding: 5px 15px;
-            border: 1px solid #ff5555;
+            border: 1px solid #cc8888;
             border-radius: 3px;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -151,16 +133,16 @@
         }
         
         .form-container {
-            background: rgba(10, 20, 40, 0.85);
-            border: 1px solid rgba(0, 150, 255, 0.3);
+            background: rgba(15, 15, 25, 0.9);
+            border: 1px solid rgba(80, 80, 120, 0.3);
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 0 25px rgba(0, 100, 200, 0.4);
+            box-shadow: 0 0 25px rgba(40, 40, 80, 0.4);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(0, 200, 255, 0.5);
+            border-top: 1px solid rgba(100, 100, 150, 0.4);
         }
         
         .form-container::before {
@@ -169,8 +151,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #00aaff, #0066cc, #00aaff);
+            height: 4px;
+            background: linear-gradient(90deg, #8080ff, #6060c0, #8080ff);
             background-size: 200% 100%;
             animation: gradient-flow 3s linear infinite;
         }
@@ -183,7 +165,7 @@
         .form-section {
             margin-bottom: 30px;
             padding-bottom: 25px;
-            border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+            border-bottom: 1px solid rgba(80, 80, 120, 0.2);
         }
         
         .form-section:last-child {
@@ -195,26 +177,26 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
             margin-bottom: 25px;
-            color: #4fc3f7;
+            color: #9090e0;
             display: flex;
             align-items: center;
             position: relative;
             padding-left: 25px;
-            text-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
+            text-shadow: 0 0 5px rgba(140, 140, 220, 0.4);
         }
         
         .form-title::before {
             content: ">";
             position: absolute;
             left: 0;
-            color: #00e676;
+            color: #a0a0ff;
             font-size: 1.8rem;
             animation: blink-caret 1s step-end infinite;
         }
         
         .form-title i {
             margin-right: 10px;
-            color: #00aaff;
+            color: #9090e0;
         }
         
         .form-row {
@@ -235,14 +217,14 @@
             display: block;
             font-size: 0.95rem;
             margin-bottom: 10px;
-            color: #90a4ae;
+            color: #a0a0c0;
             display: flex;
             align-items: center;
         }
         
         .form-group label i {
             margin-right: 8px;
-            color: #00aaff;
+            color: #9090e0;
             font-size: 0.9rem;
         }
         
@@ -250,9 +232,9 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            background: rgba(5, 15, 30, 0.7);
-            border: 1px solid rgba(0, 150, 255, 0.3);
-            color: #e0f7fa;
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid rgba(80, 80, 120, 0.3);
+            color: #e0e0f0;
             padding: 14px 18px;
             border-radius: 6px;
             font-family: 'Roboto Mono', monospace;
@@ -265,8 +247,8 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #00aaff;
-            box-shadow: 0 0 15px rgba(0, 170, 255, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.3);
+            border-color: #9090e0;
+            box-shadow: 0 0 15px rgba(140, 140, 220, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.3);
         }
         
         .form-group textarea {
@@ -292,7 +274,7 @@
             appearance: none;
             width: 18px;
             height: 18px;
-            border: 2px solid #00aaff;
+            border: 2px solid #9090e0;
             border-radius: 50%;
             background: transparent;
             position: relative;
@@ -305,9 +287,9 @@
             left: 3px;
             width: 8px;
             height: 8px;
-            background: #00aaff;
+            background: #9090e0;
             border-radius: 50%;
-            box-shadow: 0 0 8px rgba(0, 170, 255, 0.7);
+            box-shadow: 0 0 8px rgba(140, 140, 220, 0.5);
         }
         
         .photo-upload {
@@ -321,15 +303,15 @@
         .photo-preview {
             width: 220px;
             height: 280px;
-            background: rgba(0, 30, 50, 0.5);
-            border: 2px dashed rgba(0, 150, 255, 0.5);
+            background: rgba(10, 15, 25, 0.6);
+            border: 2px dashed rgba(100, 100, 150, 0.4);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 0 15px rgba(0, 100, 200, 0.3);
+            box-shadow: 0 0 15px rgba(40, 40, 80, 0.3);
         }
         
         .photo-preview img {
@@ -339,16 +321,16 @@
         }
         
         .photo-preview .placeholder-text {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(200, 200, 220, 0.4);
             text-align: center;
             padding: 20px;
             font-size: 0.9rem;
         }
         
         .upload-btn {
-            background: rgba(0, 80, 160, 0.6);
-            color: #e0f7fa;
-            border: 1px solid rgba(0, 150, 255, 0.5);
+            background: rgba(50, 50, 100, 0.6);
+            color: #e0e0f0;
+            border: 1px solid rgba(100, 100, 150, 0.4);
             padding: 12px 25px;
             border-radius: 6px;
             cursor: pointer;
@@ -361,8 +343,8 @@
         }
         
         .upload-btn:hover {
-            background: rgba(0, 120, 200, 0.8);
-            box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+            background: rgba(70, 70, 130, 0.8);
+            box-shadow: 0 0 15px rgba(120, 120, 200, 0.4);
             transform: translateY(-2px);
         }
         
@@ -372,7 +354,7 @@
         }
         
         .submit-btn {
-            background: linear-gradient(to right, #0066cc, #0044aa);
+            background: linear-gradient(to right, #5050a0, #404080);
             color: white;
             border: none;
             padding: 16px 45px;
@@ -382,7 +364,7 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(0, 100, 200, 0.5);
+            box-shadow: 0 0 20px rgba(60, 60, 120, 0.5);
             text-transform: uppercase;
             display: inline-flex;
             align-items: center;
@@ -398,7 +380,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: 0.5s;
         }
         
@@ -407,8 +389,8 @@
         }
         
         .submit-btn:hover {
-            background: linear-gradient(to right, #0055aa, #003388);
-            box-shadow: 0 0 30px rgba(0, 120, 220, 0.8);
+            background: linear-gradient(to right, #6060b0, #505090);
+            box-shadow: 0 0 30px rgba(80, 80, 160, 0.7);
             transform: translateY(-3px);
         }
         
@@ -420,13 +402,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 30, 60, 0.7);
+            background: rgba(15, 15, 25, 0.8);
             padding: 15px 25px;
             border-radius: 8px;
-            border: 1px solid rgba(0, 150, 255, 0.3);
+            border: 1px solid rgba(80, 80, 120, 0.3);
             margin-top: 20px;
             font-size: 0.95rem;
-            box-shadow: 0 0 15px rgba(0, 100, 200, 0.3);
+            box-shadow: 0 0 15px rgba(40, 40, 80, 0.3);
             backdrop-filter: blur(5px);
         }
         
@@ -438,28 +420,28 @@
         .status-indicator {
             width: 12px;
             height: 12px;
-            background: #00e676;
+            background: #7070d0;
             border-radius: 50%;
             margin-right: 10px;
-            box-shadow: 0 0 8px #00e676;
+            box-shadow: 0 0 8px #7070d0;
             animation: pulse 1.5s infinite;
         }
         
         @keyframes pulse {
-            0% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
-            70% { opacity: 1; box-shadow: 0 0 0 10px rgba(0, 230, 118, 0); }
-            100% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+            0% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(112, 112, 208, 0.7); }
+            70% { opacity: 1; box-shadow: 0 0 0 10px rgba(112, 112, 208, 0); }
+            100% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(112, 112, 208, 0); }
         }
         
         .record-count {
-            color: #4fc3f7;
+            color: #9090e0;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
         .last-update {
-            color: #ffab40;
+            color: #b0b0d0;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -531,44 +513,38 @@
         .participant-title {
             font-size: 1.1rem;
             margin-bottom: 15px;
-            color: #4fc3f7;
+            color: #9090e0;
             display: flex;
             align-items: center;
         }
         
         .participant-title i {
             margin-right: 10px;
-            color: #00aaff;
+            color: #9090e0;
         }
         
         .agency-logo {
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: rgba(0, 100, 200, 0.3);
+            background: rgba(80, 80, 140, 0.3);
             border-radius: 50%;
             margin-right: 10px;
             text-align: center;
             line-height: 40px;
             font-weight: bold;
+            color: #a0a0e0;
         }
         
         .terminal-text {
             font-family: 'Roboto Mono', monospace;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(10, 10, 20, 0.7);
             padding: 10px;
             border-radius: 5px;
             margin-top: 5px;
             font-size: 0.9rem;
-            border: 1px solid rgba(0, 150, 255, 0.2);
-        }
-        
-        .matrix-char {
-            position: absolute;
-            color: rgba(0, 255, 0, 0.7);
-            font-family: 'Roboto Mono', monospace;
-            font-size: 14px;
-            z-index: -1;
+            border: 1px solid rgba(80, 80, 120, 0.2);
+            color: #b0b0d0;
         }
     </style>
 </head>
@@ -576,7 +552,6 @@
     <div id="matrix-container">
         <canvas id="matrix-canvas"></canvas>
     </div>
-    <div class="scan-line"></div>
     
     <div class="container">
         <header class="header">
@@ -606,7 +581,7 @@
                     
                     <div class="form-group">
                         <label for="detained-name"><i class="fas fa-user"></i> ПІБ затриманого</label>
-                        <input type to="text" id="detained-name" placeholder="Прізвище Ім'я" required>
+                        <input type="text" id="detained-name" placeholder="Прізвище Ім'я" required>
                         <div class="terminal-text">Приклад: Johnson Michael</div>
                     </div>
                 </div>
@@ -778,245 +753,298 @@
     </div>
 
 <script>
-const now = new Date();
-const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' };
-document.getElementById('current-date').textContent = now.toLocaleString('uk-UA', options);
+document.addEventListener('DOMContentLoaded', function() {
+    const now = new Date();
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+    document.getElementById('current-date').textContent = now.toLocaleString('uk-UA', options);
 
-const matrixContainer = document.getElementById('matrix-container');
-const canvas = document.getElementById('matrix-canvas');
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = document.body.scrollHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#%&@*';
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
-for (let i = 0; i < columns; i++) {
-    drops[i] = Math.floor(Math.random() * canvas.height / fontSize);
-}
-
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#0f0';
-    ctx.font = fontSize + 'px monospace';
-    for (let i = 0; i < drops.length; i++) {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i]++;
+    const matrixContainer = document.getElementById('matrix-container');
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    let matrixAnimationId = null;
+    let lastRenderTime = 0;
+    const matrixFps = 15;
+    
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = document.body.scrollHeight;
     }
-}
-let matrixInterval = setInterval(drawMatrix, 50);
+    resizeCanvas();
+    
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(resizeCanvas, 250);
+    });
 
-const uploadTrigger = document.getElementById('upload-trigger');
-const photoUpload = document.getElementById('photo-upload');
-const previewImg = document.getElementById('preview-img');
-const photoPreview = document.getElementById('photo-preview');
-const placeholderText = document.querySelector('.placeholder-text');
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#%&@*';
+    const fontSize = 16;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = [];
+    
+    for (let i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * canvas.height / fontSize);
+    }
 
-uploadTrigger.addEventListener('click', () => {
-    photoUpload.click();
-});
+    function drawMatrix(timestamp) {
+        if (!lastRenderTime) lastRenderTime = timestamp;
+        const delta = timestamp - lastRenderTime;
+        
+        if (delta > 1000 / matrixFps) {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < columns; i += 2) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+            
+            lastRenderTime = timestamp;
+        }
+        
+        matrixAnimationId = requestAnimationFrame(drawMatrix);
+    }
+    
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            cancelAnimationFrame(matrixAnimationId);
+            matrixAnimationId = null;
+        } else if (!matrixAnimationId) {
+            matrixAnimationId = requestAnimationFrame(drawMatrix);
+        }
+    }
+    
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    
+    setTimeout(() => {
+        matrixAnimationId = requestAnimationFrame(drawMatrix);
+    }, 1000);
 
-photoUpload.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            previewImg.src = event.target.result;
-            previewImg.style.display = 'block';
-            placeholderText.style.display = 'none';
-            previewImg.style.opacity = '0';
-            previewImg.style.transform = 'scale(0.8)';
+    const uploadTrigger = document.getElementById('upload-trigger');
+    const photoUpload = document.getElementById('photo-upload');
+    const previewImg = document.getElementById('preview-img');
+    const photoPreview = document.getElementById('photo-preview');
+    const placeholderText = document.querySelector('.placeholder-text');
+
+    uploadTrigger.addEventListener('click', () => {
+        photoUpload.click();
+    });
+
+    photoUpload.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Розмір файлу перевищує 5MB. Будь ласка, виберіть менший файл.');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                previewImg.src = event.target.result;
+                previewImg.style.display = 'block';
+                placeholderText.style.display = 'none';
+                previewImg.style.opacity = '0';
+                previewImg.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    previewImg.style.transition = 'opacity 0.5s, transform 0.5s';
+                    previewImg.style.opacity = '1';
+                    previewImg.style.transform = 'scale(1)';
+                }, 100);
+                photoPreview.style.border = '2px solid rgba(160, 160, 220, 0.6)';
+                photoPreview.style.boxShadow = '0 0 20px rgba(140, 140, 220, 0.4)';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    const form = document.getElementById('wanted-form');
+    const submitBtn = document.querySelector('.submit-btn');
+    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycby6GxZt7z94s8tc9iWQ5140PtPqVjQseAjEZ7l-rcW4vK-mSPLq_g1NUWiNUhLgZIoV/exec';
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!photoUpload.files.length) {
+            alert('Будь ласка, завантажте фоторобот або фотографію!');
+            photoPreview.style.borderColor = '#cc8888';
+            photoPreview.style.boxShadow = '0 0 15px rgba(204, 136, 136, 0.5)';
+            return;
+        }
+
+        const staticId = document.getElementById('static-id').value;
+        const detainedName = document.getElementById('detained-name').value;
+        const organization = document.getElementById('organization').value;
+        const articles = document.getElementById('articles').value;
+
+        if (!staticId || !detainedName || !organization || !articles) {
+            alert('Будь ласка, заповніть всі обов\'язкові поля!');
+            return;
+        }
+
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> ВІДПРАВЛЯЄТЬСЯ...';
+        submitBtn.disabled = true;
+
+        try {
+            const file = photoUpload.files[0];
+            const proxyFormData = new FormData();
+            proxyFormData.append('image', file);
+            
+            cancelAnimationFrame(matrixAnimationId);
+            matrixAnimationId = null;
+
+            const proxyResponse = await fetch('/api/upload', {
+                method: 'POST',
+                body: proxyFormData
+            });
+
+            let proxyResult;
+            if (proxyResponse.ok) {
+                proxyResult = await proxyResponse.json();
+            } else {
+                const errorText = await proxyResponse.text();
+                throw new Error(`Помилка сервера: ${errorText}`);
+            }
+
+            if (!proxyResult.success) {
+                throw new Error(`Помилка завантаження зображення: ${proxyResult.error || 'Невідома помилка сервера'}`);
+            }
+            
+            const imageUrl = proxyResult.data.url;
+            
+            const googleFormData = new URLSearchParams();
+            googleFormData.append('staticId', staticId);
+            googleFormData.append('detainedName', detainedName);
+            googleFormData.append('organization', organization);
+            googleFormData.append('articles', articles);
+            googleFormData.append('bail', document.querySelector('input[name="bail"]:checked')?.value || '');
+            googleFormData.append('conviction', document.querySelector('input[name="conviction"]:checked')?.value || '');
+            googleFormData.append('imageUrl', imageUrl);
+            
+            for (let i = 1; i <= 5; i++) {
+                const id = document.getElementById(`officer-id-${i}`).value;
+                const name = document.getElementById(`officer-name-${i}`).value;
+                if (id && name) {
+                    googleFormData.append(`officer-id-${i}`, id);
+                    googleFormData.append(`officer-name-${i}`, name);
+                }
+            }
+
+            const response = await fetch(appsScriptUrl, {
+                method: 'POST',
+                body: googleFormData,
+                redirect: 'follow'
+            }).catch(error => {
+                if (error.message.includes('Failed to fetch') || error.message.includes('CORS')) {
+                    console.warn('CORS-помилку проігноровано, дані ймовірно відправлені успішно.');
+                    return { ok: true, json: async () => ({ status: 'success', message: 'Дані успішно надіслані (CORS)' }) };
+                }
+                throw error;
+            });
+
+            const result = await response.json();
+            console.log('Apps Script response:', result);
+
+            submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> ДАНІ УСПІШНО НАДІСЛАНІ!';
+            submitBtn.style.background = 'linear-gradient(to right, #6060b0, #505090)';
+            submitBtn.style.boxShadow = '0 0 25px rgba(112, 112, 208, 0.8)';
+            form.style.borderColor = 'rgba(112, 112, 208, 0.7)';
+            
+            const countElement = document.getElementById('record-count');
+            let count = parseInt(countElement.textContent.replace(',', '')) || 0;
+            count++;
+            countElement.textContent = count.toLocaleString();
+
             setTimeout(() => {
-                previewImg.style.transition = 'opacity 0.5s, transform 0.5s';
-                previewImg.style.opacity = '1';
-                previewImg.style.transform = 'scale(1)';
-            }, 100);
-            photoPreview.style.border = '2px solid rgba(0, 200, 255, 0.7)';
-            photoPreview.style.boxShadow = '0 0 20px rgba(0, 200, 255, 0.4)';
-        };
-        reader.readAsDataURL(file);
-    }
-});
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = 'linear-gradient(to right, #5050a0, #404080)';
+                submitBtn.style.boxShadow = '0 0 20px rgba(60, 60, 120, 0.5)';
+                submitBtn.disabled = false;
+                form.style.borderColor = 'rgba(80, 80, 120, 0.3)';
+                form.reset();
+                previewImg.style.display = 'none';
+                placeholderText.style.display = 'block';
+                photoPreview.style.border = '2px dashed rgba(100, 100, 150, 0.4)';
+                photoPreview.style.boxShadow = '0 0 15px rgba(40, 40, 80, 0.3)';
+                document.getElementById('current-date').textContent = new Date().toLocaleString('uk-UA', options);
+                
+                if (!matrixAnimationId && !document.hidden) {
+                    matrixAnimationId = requestAnimationFrame(drawMatrix);
+                }
+            }, 3000);
 
-const form = document.getElementById('wanted-form');
-const submitBtn = document.querySelector('.submit-btn');
-const appsScriptUrl = 'https://script.google.com/macros/s/AKfycby6GxZt7z94s8tc9iWQ5140PtPqVjQseAjEZ7l-rcW4vK-mSPLq_g1NUWiNUhLgZIoV/exec';
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    if (!photoUpload.files.length) {
-        alert('Будь ласка, завантажте фоторобот або фотографію!');
-        photoPreview.style.borderColor = '#ff5252';
-        photoPreview.style.boxShadow = '0 0 15px rgba(255, 82, 82, 0.5)';
-        return;
-    }
-
-    const staticId = document.getElementById('static-id').value;
-    const detainedName = document.getElementById('detained-name').value;
-    const organization = document.getElementById('organization').value;
-    const articles = document.getElementById('articles').value;
-
-    if (!staticId || !detainedName || !organization || !articles) {
-        alert('Будь ласка, заповніть всі обов\'язкові поля!');
-        return;
-    }
-
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> ВІДПРАВЛЯЄТЬСЯ...';
-    submitBtn.disabled = true;
-
-    try {
-
-        const file = photoUpload.files[0];
-        const proxyFormData = new FormData();
-        proxyFormData.append('image', file);
-        
-
-        const proxyResponse = await fetch('/api/upload', { // <-- Адреса нашої серверної функції
-            method: 'POST',
-            body: proxyFormData
-        });
-
-        let proxyResult;
-if (proxyResponse.ok) {
-    proxyResult = await proxyResponse.json();
-} else {
-    const errorText = await proxyResponse.text();
-    throw new Error(`Помилка сервера: ${errorText}`);
-}
-
-if (!proxyResult.success) {
-    throw new Error(`Помилка завантаження зображення: ${proxyResult.error || 'Невідома помилка сервера'}`);
-}
-        
-        
-        const imageUrl = proxyResult.data.url;
-        
-
-        const googleFormData = new URLSearchParams();
-        googleFormData.append('staticId', staticId);
-        googleFormData.append('detainedName', detainedName);
-        googleFormData.append('organization', organization);
-        googleFormData.append('articles', articles);
-        googleFormData.append('bail', document.querySelector('input[name="bail"]:checked')?.value || '');
-        googleFormData.append('conviction', document.querySelector('input[name="conviction"]:checked')?.value || '');
-        googleFormData.append('imageUrl', imageUrl); // <-- Використовуємо отриманий URL
-        
-        for (let i = 1; i <= 5; i++) {
-            const id = document.getElementById(`officer-id-${i}`).value;
-            const name = document.getElementById(`officer-name-${i}`).value;
-            if (id && name) {
-                googleFormData.append(`officer-id-${i}`, id);
-                googleFormData.append(`officer-name-${i}`, name);
-            }
-        }
-
-        console.log('Form Data to Google:', Object.fromEntries(googleFormData));
-
-
-        const response = await fetch(appsScriptUrl, {
-            method: 'POST',
-            body: googleFormData,
-            redirect: 'follow'
-        }).catch(error => {
-            if (error.message.includes('Failed to fetch') || error.message.includes('CORS')) {
-                console.warn('CORS-помилку проігноровано, дані ймовірно відправлені успішно.');
-                return { ok: true, json: async () => ({ status: 'success', message: 'Дані успішно надіслані (CORS)' }) };
-            }
-            throw error;
-        });
-
-        const result = await response.json();
-        console.log('Apps Script response:', result);
-
-        submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> ДАНІ УСПІШНО НАДІСЛАНІ!';
-        submitBtn.style.background = 'linear-gradient(to right, #00b894, #00cec9)';
-        submitBtn.style.boxShadow = '0 0 25px rgba(0, 230, 118, 0.8)';
-        form.style.borderColor = 'rgba(0, 230, 118, 0.7)';
-        
-        const countElement = document.getElementById('record-count');
-        let count = parseInt(countElement.textContent.replace(',', '')) || 0;
-        count++;
-        countElement.textContent = count.toLocaleString();
-
-        setTimeout(() => {
+        } catch (error) {
+            console.error('Помилка відправки форми:', error);
+            alert(`Помилка: ${error.message}`);
             submitBtn.innerHTML = originalText;
-            submitBtn.style.background = 'linear-gradient(to right, #0066cc, #0044aa)';
-            submitBtn.style.boxShadow = '0 0 20px rgba(0, 100, 200, 0.5)';
             submitBtn.disabled = false;
-            form.style.borderColor = 'rgba(0, 150, 255, 0.3)';
-            form.reset();
-            previewImg.style.display = 'none';
-            placeholderText.style.display = 'block';
-            photoPreview.style.border = '2px dashed rgba(0, 150, 255, 0.5)';
-            photoPreview.style.boxShadow = '0 0 15px rgba(0, 100, 200, 0.3)';
-            document.getElementById('current-date').textContent = new Date().toLocaleString('uk-UA', options);
-        }, 3000);
+            
+            if (!matrixAnimationId && !document.hidden) {
+                matrixAnimationId = requestAnimationFrame(drawMatrix);
+            }
+        }
+    });
 
-    } catch (error) {
-        console.error('Помилка відправки форми:', error);
-        alert(`Помилка: ${error.message}`);
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
     }
-});
 
-const inputs = document.querySelectorAll('input, select, textarea');
-inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-        const parent = input.closest('.form-group');
-        if (parent) {
-             parent.style.transform = 'translateX(5px)';
-             parent.style.boxShadow = '0 0 10px rgba(0, 170, 255, 0.3)';
-        }
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            const parent = input.closest('.form-group');
+            if (parent) {
+                 parent.style.transform = 'translateX(5px)';
+                 parent.style.boxShadow = '0 0 10px rgba(140, 140, 220, 0.3)';
+            }
+        });
+        input.addEventListener('blur', () => {
+             const parent = input.closest('.form-group');
+            if (parent) {
+                parent.style.transform = 'translateX(0)';
+                parent.style.boxShadow = 'none';
+            }
+        });
     });
-    input.addEventListener('blur', () => {
-         const parent = input.closest('.form-group');
-        if (parent) {
-            parent.style.transform = 'translateX(0)';
-            parent.style.boxShadow = 'none';
-        }
-    });
-});
 
-const participantTitles = document.querySelectorAll('.participant-title');
-participantTitles.forEach(title => {
-    title.addEventListener('mouseenter', () => {
-        title.style.textShadow = '0 0 10px rgba(0, 200, 255, 0.7)';
+    const participantTitles = document.querySelectorAll('.participant-title');
+    participantTitles.forEach(title => {
+        title.addEventListener('mouseenter', () => {
+            title.style.textShadow = '0 0 10px rgba(160, 160, 220, 0.7)';
+        });
+        title.addEventListener('mouseleave', () => {
+            title.style.textShadow = 'none';
+        });
     });
-    title.addEventListener('mouseleave', () => {
-        title.style.textShadow = 'none';
-    });
-});
 
-let lastScrollPosition = 0;
-let animationRunning = true;
-window.addEventListener('scroll', () => {
-    const currentPosition = window.scrollY;
-    if (Math.abs(currentPosition - lastScrollPosition) > 50) {
-        if (animationRunning) {
-            clearInterval(matrixInterval);
-            animationRunning = false;
+    let scrollTimeout;
+    window.addEventListener('scroll', debounce(() => {
+        if (matrixAnimationId) {
+            cancelAnimationFrame(matrixAnimationId);
+            matrixAnimationId = null;
         }
-    } else {
-        if (!animationRunning) {
-            matrixInterval = setInterval(drawMatrix, 50);
-            animationRunning = true;
+        
+        if (!matrixAnimationId && !document.hidden) {
+            matrixAnimationId = requestAnimationFrame(drawMatrix);
         }
-    }
-    lastScrollPosition = currentPosition;
+    }, 1000));
 });
 </script>
 </body>
