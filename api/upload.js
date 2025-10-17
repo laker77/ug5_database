@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         return res.status(405).json({ success: false, error: 'Method Not Allowed' });
     }
 
-    const IMGBB_API_KEY = '36d91510e62c838b71a127f9ebbc7a0d';
+    const IMGBB_API_KEY = 'ce35f62fc096657f7b6d5aafacc2a2e3';
 
     const parseForm = (req) =>
         new Promise((resolve, reject) => {
